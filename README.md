@@ -3,6 +3,8 @@ BSYNotificationCenter是对通知的简单封装，开发者不用再去关注�
 /**
  单利
  */
+ 
+ 
 +(BSYNotificationCenter *)shareCenter;
 
 
@@ -12,6 +14,8 @@ BSYNotificationCenter是对通知的简单封装，开发者不用再去关注�
  @param object 参数
  @param  SuccessRemove 注册成功后立即删除通知 （True：删除，False：不删除）
  */
+ 
+ 
 -(void)bsy_RegisterCenterName:(nonnull NSNotificationName )CenterName object:(nullable id)object SuccessRemove:(BOOL)SuccessRemove;
 
 
@@ -23,11 +27,17 @@ BSYNotificationCenter是对通知的简单封装，开发者不用再去关注�
 @param  SuccessRemove 接受成功后立即删除通知 （True：删除，False：不删除）
  @param backBlock 接受后回调
  */
+ 
+ 
 -(void)bsy_addObserver:(id)addObserver ActionMothed:(NSString *)actionMothed  CenterName:(NSNotificationName )CenterName queue:(NSOperationQueue*)queue SuccessRemove:(BOOL)SuccessRemove  BackBlock:(Successted)backBlock;
+
+
 /**
  删除目标中的所有通知
  @param observer 目标
  */
+ 
+ 
 -(void)bsy_removeObserver:(id)observer;
 
 
@@ -36,4 +46,6 @@ BSYNotificationCenter是对通知的简单封装，开发者不用再去关注�
  @param observer 目标
  @param CenterName 通知名称
  */
+ 
+ 
 -(void)bsy_removeObserver:(id)observer  CenterName:(nonnull NSNotificationName )CenterName;
